@@ -20,3 +20,42 @@ int main()
 //		printf("hehe ");
 //	}
 //}
+
+//写一个字符型的数据到文件内
+//int main()
+//{
+//	//打开文件
+//	FILE* pf=fopen("text.txt", "w");
+//	if (pf == NULL)
+//	{
+//		printf("%s\n", strerror(errno));
+//		return 0;
+//	}
+//	fputc('b', pf);
+//	fputc('i', pf);
+//	fputc('t', pf);
+//	//关闭文件
+//	fclose(pf);
+//	pf=NULL;
+//	return 0;
+//}
+
+
+//读一个字符型
+int main()
+{
+	//打开文件
+	FILE* pf = fopen("text.txt", "r");
+	if (pf == NULL)
+	{
+		printf("%s\n", strerror(errno));
+		return 0;
+	}
+	printf("%c ", fgetc(pf));
+	printf("%c ", fgetc(pf));
+	printf("%c ",fgetc(pf));
+	//关闭文件
+	fclose(pf);
+	pf = NULL;
+	return 0;
+}
