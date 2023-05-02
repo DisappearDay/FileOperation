@@ -59,3 +59,9 @@ int main()
 	pf = NULL;
 	return 0;
 }
+int main()
+{
+	int ch=fgetc(stdin);
+	fputc(ch,stdout);
+	return 0;
+}
