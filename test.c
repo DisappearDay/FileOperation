@@ -178,3 +178,43 @@ int main()
 
 	return 0;
 }
+struct tmp
+{
+	char arr[10];
+	int a;
+	double b;
+};
+
+//int main()
+//{
+//	struct tmp t = { "zhangsan",20,2.4 };
+//	FILE* pf = fopen("text.txt", "wb");
+//	if (pf == NULL)
+//	{
+//		return 0;
+//	}
+//
+//	fwrite(&t, sizeof(struct tmp), 1, pf);
+//
+//	fclose(pf);
+//	pf = NULL;
+//	return 0;
+//}
+
+int main()
+{
+	//struct tmp t = { "zhangsan",20,2.4 };
+	struct tmp m = { 0 };
+	FILE* pf = fopen("text.txt", "rb");
+	if (pf == NULL)
+	{
+		return 0;
+	}
+
+	fread(&m, sizeof(struct tmp), 1, pf);
+	printf("%s ""%d ""%f ",m.arr,m.a,m.b);
+
+	fclose(pf);
+	pf = NULL;
+	return 0;
+}
