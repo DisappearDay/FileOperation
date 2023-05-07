@@ -218,3 +218,65 @@ int main()
 	pf = NULL;
 	return 0;
 }
+
+//int main()
+//{
+//	FILE* pf = fopen("text.txt", "r");
+//	if (pf == NULL)
+//	{
+//		
+//		return 0;
+//	}
+//
+//	//定位
+//	fseek(pf,4,SEEK_SET);
+//
+//	int ch = fgetc(pf);
+//	printf("%c\n", ch);
+//	rewind(pf);
+//	ch = fgetc(pf);
+//	printf("%c\n", ch);
+//	fclose(pf);
+//	pf = NULL;
+//
+//	return 0;
+//}
+
+
+//int main()
+//{
+//	FILE* pf = fopen("text.txt", "r");
+//	if (pf == NULL)
+//	{
+//
+//		return 0;
+//	}
+//
+//	//定位
+//	fseek(pf, 4, SEEK_SET);
+//	int pos=ftell(pf);
+//	printf("%d\n", pos);
+//
+//	fclose(pf);
+//	pf = NULL;
+//
+//	return 0;
+//}
+
+int main()
+{
+	FILE* pf = fopen("text.txt", "r");
+	/*if (pf == NULL)
+	{
+	    //将错误码对应的错误信息打印出来
+		printf("%s\n", strerror(errno));
+		return 0;
+	}*/
+	if (pf == NULL)
+	{
+		//先打印括号的内容，在打印冒号和空格，再把错误码对应的错误信息打印出来
+		perror("file text.txt");
+		return 0;
+	}
+	return 0;
+}
